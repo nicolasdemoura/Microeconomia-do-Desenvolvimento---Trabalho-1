@@ -10,7 +10,7 @@
 
 # Clean the working environment
 rm(list = ls())
-load.lib <- c("dplyr", "ipumsr", "ggplot2", "splines", "stargazer", "Hmisc", "AER","readxl", "tidyverse", "data.table", "stargazer", "lubridate", "fixest", "ggplot2", "pracma", "dplyr", "remotes", "tidyr", "mvProbit", "ipw", "MASS", "xtable", "quantreg", "nprobust", "chron")
+load.lib <- c("dplyr", "ipumsr", "ggplot2", "splines", "stargazer", "Hmisc", "AER","readxl", "tidyverse", "data.table", "stargazer", "lubridate", "fixest", "ggplot2", "pracma", "dplyr", "remotes", "tidyr", "mvProbit", "ipw", "MASS", "xtable", "quantreg", "nprobust", "chron", "WDI")
 install.lib <- load.lib[!load.lib %in% installed.packages()]
 for(lib in install.lib) install.packages(lib,dependencies=TRUE)
 sapply(load.lib, require, character=TRUE)
@@ -28,6 +28,11 @@ max_rows <- 100000
 
 data_list <- read_ipums_ddi("data/ipumsi_00014.xml")
 raw_data <- read_ipums_micro(data_list)
+
+# Fetch inflation data for Mexico between 1970 and 2000
+inflation_data <- WDI(country = "MX", indicator = "FP.CPI.TOTL", start = 1970, end = 2000)
+inflation_rate <- inflation_data[inflation_data$year==2000, ]$FP.CPI.TOTL / inflation_data[inflation_data$year==1970, ]$FP.CPI.TOTL - 1
+print(inflation_rate)
 
 ###############################################################################
 # Process the data
@@ -51,7 +56,9 @@ ds <- temp_data %>%
                 INCPC = INCTOT / PERNUM,
                 INCPCWEL = INCWEL / PERNUM)
 
-# TODO: Inflation?
+# Deflate the income from 1970 to 2000
+ds <- ds %>% 
+    mutate(INCPC = ifelse(YEAR == 1970, INCPC * (1+inflation_rate), INCPC))
 
 # Calculate the Lorenz curve
 ds <- ds %>%
@@ -63,20 +70,71 @@ ds <- ds %>%
 # Plot the Lorenz curve
 ggplot(ds, aes(x = share, y = lorenz, color = factor(YEAR))) +
     geom_line(size = 1.5) +
-    labs(title = "Curva de Lorenz",
-         x = "Fração da População",
+    scale_color_manual(values = c("1970" = "#1E88E5", "2000" = "#D81B60", "Igualdade Perfeita" = "black")) +
+    labs(x = "Fração da População",
          y = "Fração da Renda Acumulada",
+         color = "Ano") +
+    theme_bw(base_size = 25) +
+    geom_abline(intercept = 0, slope = 1, linetype = "dashed", xend = 1, yend = 1, xstart = 0, ystart = 0) +
+    theme(plot.margin = unit(c(5, 7, 2, 2), "mm"),
+         legend.position = "bottom",
+         legend.text = element_text(size = 15),
+         legend.title = element_text(size = 16),
+         legend.key.size = unit(1, "cm"),
+         legend.background = element_rect(color = "black", size = 0.5)) +
+    coord_cartesian(xlim = c(0.04, 0.96), ylim = c(0.04, 0.96))
+ggsave("figures/lorenz_curve.png", width = 10, height = 10)
+
+# Plot the income distribution 
+ggplot(ds, aes(x = share, y = INCPC, color = factor(YEAR))) +
+    geom_line(size = 1.5) +
+    scale_color_manual(values = c("1970" = "#1E88E5", "2000" = "#D81B60")) +
+    labs(x = "Fração da População",
+         y = "Renda",
          color = "Ano") +
     theme_bw(base_size = 25) +
     theme(plot.margin = unit(c(5, 7, 2, 2), "mm"),
          legend.position = "bottom",
          legend.text = element_text(size = 15),
          legend.title = element_text(size = 16),
-         legend.key.size = unit(0.7, "cm"),
+         legend.key.size = unit(1, "cm"),
          legend.background = element_rect(color = "black", size = 0.5)) +
-    scale_color_manual(values = c("1970" = "#1E88E5", "2000" = "#D81B60"))
+    coord_cartesian(xlim = c(0.04, 0.96))
+ggsave("figures/income_distribution.png", width = 10, height = 10)
 
+# Truncate for the 1th-99th percentile
 
-View(ds[ds$YEAR == 1970,])
+# Plot the Lorenz curve
+ggplot(ds[ds$share >= 0.01 & ds$share <= 0.99,], aes(x = share, y = lorenz, color = factor(YEAR))) +
+    geom_line(size = 1.5) +
+    scale_color_manual(values = c("1970" = "#1E88E5", "2000" = "#D81B60", "Igualdade Perfeita" = "black")) +
+    labs(x = "Fração da População",
+         y = "Fração da Renda Acumulada",
+         color = "Ano") +
+    theme_bw(base_size = 25) +
+    geom_abline(intercept = 0, slope = 1, linetype = "dashed", xend = 1, yend = 1, xstart = 0, ystart = 0) +
+    theme(plot.margin = unit(c(5, 7, 2, 2), "mm"),
+         legend.position = "bottom",
+         legend.text = element_text(size = 15),
+         legend.title = element_text(size = 16),
+         legend.key.size = unit(1, "cm"),
+         legend.background = element_rect(color = "black", size = 0.5)) +
+    coord_cartesian(xlim = c(0.04, 0.96), ylim = c(0.04, 0.96))
+ggsave("figures/truncated_lorenz_curve.png", width = 10, height = 10)
 
-temp_data[temp_data$SERIAL == 75417000,]
+# Plot the income distribution 
+ggplot(ds[ds$share >= 0.01 & ds$share <= 0.99], aes(x = share, y = INCPC, color = factor(YEAR))) +
+    geom_line(size = 1.5) +
+    scale_color_manual(values = c("1970" = "#1E88E5", "2000" = "#D81B60")) +
+    labs(x = "Fração da População",
+         y = "Renda",
+         color = "Ano") +
+    theme_bw(base_size = 25) +
+    theme(plot.margin = unit(c(5, 7, 2, 2), "mm"),
+         legend.position = "bottom",
+         legend.text = element_text(size = 15),
+         legend.title = element_text(size = 16),
+         legend.key.size = unit(1, "cm"),
+         legend.background = element_rect(color = "black", size = 0.5)) +
+    coord_cartesian(xlim = c(0.04, 0.96))
+ggsave("figures/truncated_income_distribution.png", width = 10, height = 10)
