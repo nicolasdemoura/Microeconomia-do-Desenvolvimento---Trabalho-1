@@ -17,10 +17,10 @@ sapply(load.lib, require, character=TRUE)
 remove(install.lib, lib, load.lib)
 
 # Set the seed
-set.seed(20250323)
+set.seed(20250325)
 
 # Set the maximum number of rows 
-#max_rows <- 100000
+#max_rows <- 80000
 
 # Import functions
 source("functions.R")
@@ -41,13 +41,18 @@ print(inflation_rate)
 # Process the data
 ###############################################################################
 
-# Select random sample of 10% of the data by serial 
-temp_data <- raw_data #%>% filter(SERIAL %in% sample(unique(SERIAL), max_rows))
+# Sampled data
+temp_data <- raw_data #%>% group_by(YEAR) %>% filter(SERIAL %in% sample(unique(SERIAL), max_nrows), replace = FALSE))
 
 # Input NA data for missing values
 temp_data$INCTOT <- ifelse(temp_data$INCTOT == 9999999 | temp_data$INCTOT == 9999998, NA, temp_data$INCTOT)
 temp_data$INCWEL <- ifelse(temp_data$INCWEL == 999999 | temp_data$INCWEL == 999998, NA, temp_data$INCWEL)
 temp_data <- as.data.frame(temp_data)
+
+# Deflate the income from 1970 to 2000 and consider the currency change from 1000 pesos to 1 new peso
+temp_data <- temp_data %>% 
+    mutate(INCTOT = ifelse(YEAR == 1970, INCTOT * (1+inflation_rate)/1000, INCTOT),
+           INCWEL = ifelse(YEAR == 1970, INCWEL * (1+inflation_rate)/1000, INCWEL))
 
 # Create the dataset
 ds <- temp_data %>% 
@@ -58,10 +63,6 @@ ds <- temp_data %>%
                 INCWEL = sum(INCWEL, na.rm = TRUE),
                 INCPC = INCTOT / PERNUM,
                 INCPCWEL = INCWEL / PERNUM)
-
-# Deflate the income from 1970 to 2000 and consider the currency change from 1000 pesos to 1 new peso
-ds <- ds %>% 
-    mutate(INCPC = ifelse(YEAR == 1970, INCPC * (1+inflation_rate)/1000, INCPC))
 
 # Calculate the Lorenz curve
 ds <- ds %>%
@@ -99,23 +100,34 @@ stargazer(table_stat, type = "latex", title = "Estatísticas Descritivas", summa
 # Poverty and Inequality Measures
 ###############################################################################
 
-
 ############
 # Inequality
 ############
 
-# Calculate the Gini coefficient
-
-# Calculate the 90-10 ratio
-
-# Calculate the Theil index
+# Calculate the Gini coefficient and the 90-10 ratio
+measures_inequality <- ds %>% 
+    group_by(YEAR) %>% 
+    summarise(gini = gini(INCPC, HHWT),
+               ratio_90_10 = ratio_90_10(INCPC, HHWT))
 
 ############
 # Poverty
 ############
 
-#
+# Calculate the headcount ratio, poverty gap, poverty severity for different poverty lines 10e4, 10e5, 10e6
 
+measures_poverty <- ds %>% 
+    group_by(YEAR) %>% 
+    summarise(headcount_ratio_10e3 = P_alpha(INCPC, HHWT, 0, 10e3),
+               headcount_ratio_10e4 = P_alpha(INCPC, HHWT, 0, 10e4),
+               headcount_ratio_10e5 = P_alpha(INCPC, HHWT, 0, 10e5),
+               poverty_gap_10e3 = P_alpha(INCPC, HHWT, 1, 10e3),
+               poverty_gap_10e4 = P_alpha(INCPC, HHWT, 1, 10e4),
+               poverty_gap_10e5 = P_alpha(INCPC, HHWT, 1, 10e5),
+               poverty_severity_10e3 = P_alpha(INCPC, HHWT, 2, 10e3),
+               poverty_severity_10e4 = P_alpha(INCPC, HHWT, 2, 10e4),
+               poverty_severity_10e5 = P_alpha(INCPC, HHWT, 2, 10e5))
+    
 ###############################################################################
 # Plotting the curves
 ###############################################################################
@@ -156,7 +168,7 @@ ggplot(ds, aes(x = share, y = INCPC, color = factor(YEAR))) +
 ggsave("figures/income_distribution.png", width = 10, height = 10)
 
 # Plot the log income distribution 
-ggplot(ds, aes(x = share, y = log(INCPC + 1), color = factor(YEAR))) +
+ggplot(ds, aes(x = share, y = log(INCPC + 1, base = 10), color = factor(YEAR))) +
     geom_line(size = 1.5) +
     scale_color_manual(values = c("1970" = "#1E88E5", "2000" = "#D81B60")) +
     labs(x = "Fração da População",
@@ -171,6 +183,3 @@ ggplot(ds, aes(x = share, y = log(INCPC + 1), color = factor(YEAR))) +
          legend.background = element_rect(color = "black", size = 0.5)) +
     coord_cartesian(xlim = c(0.04, 0.96))
 ggsave("figures/income_distribution_log.png", width = 10, height = 10)
-
-
-
