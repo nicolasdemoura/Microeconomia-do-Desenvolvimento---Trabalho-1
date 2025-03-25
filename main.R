@@ -20,7 +20,10 @@ remove(install.lib, lib, load.lib)
 set.seed(20250323)
 
 # Set the maximum number of rows 
-max_rows <- 100000
+#max_rows <- 100000
+
+# Import functions
+source("functions.R")
 
 ###############################################################################
 # Creating the dataset
@@ -30,8 +33,8 @@ data_list <- read_ipums_ddi("data/ipumsi_00014.xml")
 raw_data <- read_ipums_micro(data_list)
 
 # Fetch inflation data for Mexico between 1970 and 2000
-inflation_data <- WDI(country = "MX", indicator = "FP.CPI.TOTL", start = 1970, end = 2000)
-inflation_rate <- inflation_data[inflation_data$year==2000, ]$FP.CPI.TOTL / inflation_data[inflation_data$year==1970, ]$FP.CPI.TOTL - 1
+inflation_data <- WDI(country = "MX", indicator = "FP.CPI.TOTL", start = 1971, end = 2000)
+inflation_rate <- inflation_data[inflation_data$year==2000, ]$FP.CPI.TOTL / inflation_data[inflation_data$year==1971, ]$FP.CPI.TOTL - 1
 print(inflation_rate)
 
 ###############################################################################
@@ -39,7 +42,7 @@ print(inflation_rate)
 ###############################################################################
 
 # Select random sample of 10% of the data by serial 
-temp_data <- raw_data %>% filter(SERIAL %in% sample(unique(SERIAL), max_rows))
+temp_data <- raw_data #%>% filter(SERIAL %in% sample(unique(SERIAL), max_rows))
 
 # Input NA data for missing values
 temp_data$INCTOT <- ifelse(temp_data$INCTOT == 9999999 | temp_data$INCTOT == 9999998, NA, temp_data$INCTOT)
@@ -56,9 +59,9 @@ ds <- temp_data %>%
                 INCPC = INCTOT / PERNUM,
                 INCPCWEL = INCWEL / PERNUM)
 
-# Deflate the income from 1970 to 2000
+# Deflate the income from 1970 to 2000 and consider the currency change from 1000 pesos to 1 new peso
 ds <- ds %>% 
-    mutate(INCPC = ifelse(YEAR == 1970, INCPC * (1+inflation_rate), INCPC))
+    mutate(INCPC = ifelse(YEAR == 1970, INCPC * (1+inflation_rate)/1000, INCPC))
 
 # Calculate the Lorenz curve
 ds <- ds %>%
@@ -66,6 +69,56 @@ ds <- ds %>%
     arrange(INCPC) %>% 
     mutate(share = cumsum(HHWT) / sum(HHWT),
             lorenz = cumsum(INCPC * HHWT) / sum(INCPC * HHWT))
+
+###############################################################################
+# Descriptive Statistics
+###############################################################################
+
+# Calculate the mean and standard deviation of the income per capita and welfare benefits income per capita
+descriptive_stat <- ds %>% 
+    group_by(YEAR) %>% 
+    summarise(INPC = weighted.mean(INCPC, HHWT, na.rm = TRUE),
+                INCWEL = weighted.mean(INCPCWEL, HHWT, na.rm = TRUE),
+                HHNUM = n(),
+                PERNUM = weighted.mean(PERNUM, HHWT, na.rm = TRUE))
+
+# Create a dataframe with household income per capita, household welfare income per capita, number of households, average size of households 
+table_stat <- as.data.frame(matrix(nrow = 4, ncol = 3))
+colnames(table_stat) <- c("Variável", "1970", "2000")
+table_stat$Variável <- c("Renda per capita", "Renda per capita (benefícios sociais)", "Número de domicílios", "Tamanho médio dos domicílios")
+
+for(i in 1:4) {
+    table_stat[i, 2] <- descriptive_stat[1, i+1]
+    table_stat[i, 3] <- descriptive_stat[2, i+1]
+}
+
+# Export the table using stargazer as latex code
+stargazer(table_stat, type = "latex", title = "Estatísticas Descritivas", summary = FALSE, header = FALSE, digits = 2, out = "tables/descriptive_statistics.tex")
+
+###############################################################################
+# Poverty and Inequality Measures
+###############################################################################
+
+
+############
+# Inequality
+############
+
+# Calculate the Gini coefficient
+
+# Calculate the 90-10 ratio
+
+# Calculate the Theil index
+
+############
+# Poverty
+############
+
+#
+
+###############################################################################
+# Plotting the curves
+###############################################################################
 
 # Plot the Lorenz curve
 ggplot(ds, aes(x = share, y = lorenz, color = factor(YEAR))) +
@@ -75,7 +128,7 @@ ggplot(ds, aes(x = share, y = lorenz, color = factor(YEAR))) +
          y = "Fração da Renda Acumulada",
          color = "Ano") +
     theme_bw(base_size = 25) +
-    geom_abline(intercept = 0, slope = 1, linetype = "dashed", xend = 1, yend = 1, xstart = 0, ystart = 0) +
+    geom_abline(intercept = 0, slope = 1, linetype = "dashed")+
     theme(plot.margin = unit(c(5, 7, 2, 2), "mm"),
          legend.position = "bottom",
          legend.text = element_text(size = 15),
@@ -118,3 +171,6 @@ ggplot(ds, aes(x = share, y = log(INCPC + 1), color = factor(YEAR))) +
          legend.background = element_rect(color = "black", size = 0.5)) +
     coord_cartesian(xlim = c(0.04, 0.96))
 ggsave("figures/income_distribution_log.png", width = 10, height = 10)
+
+
+
