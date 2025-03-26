@@ -18,15 +18,16 @@ gini <- function(x, w) {
     lorenz <- cumsum(x * w) / sum(x * w)
 
     # Calculate the Gini coefficient
-    gini <- 1 - 2*sum(lorenz) / length(lorenz)
+    gini <- round(1 - 2*sum(lorenz) / length(lorenz),3)
     
+    return(gini)
 }
 
-# Function that calculates the 90-10 ratio
-ratio_90_10 <- function(x, w) {
+# Function that calculates the lambda-(1-lambda) ratio
+ratio <- function(x, w, lambda) {
     
-    # Calculate the 90-10 ratio
-    ratio <- Hmisc::wtd.quantile(x, w, 0.9) / Hmisc::wtd.quantile(x, w, 0.1)
+    # Calculate the 80-20 ratio
+    ratio <- round(Hmisc::wtd.quantile(x, w, lambda) / Hmisc::wtd.quantile(x, w, 1-lambda),3)
 
     return(ratio)
 }
@@ -41,7 +42,7 @@ ratio_90_10 <- function(x, w) {
 P_alpha <- function(x, w, alpha, z) {
     dm_poor <- ifelse(x <= z, 1, 0)
     # Calculate the P-alpha poverty measure
-    P_alpha <- sum(w * ((z-x)/z)^alpha * dm_poor) / sum(w)
+    P_alpha <- round(sum(w * ((z-x)/z)^alpha * dm_poor) / sum(w),3)
     
     return(P_alpha)
     

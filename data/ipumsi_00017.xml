@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="ipums-ddi-xslt.xsl"?>
-<codeBook ID="ddi2-679d5e20-c232-013c-6f29-0242ac170004-ipumsi_00012.dat-international.ipums.org" version="2.5" xmlns="ddi:codebook:2_5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="ddi:codebook:2_5 http://www.ddialliance.org/Specification/DDI-Codebook/2.5/XMLSchema/codebook.xsd">
+<codeBook ID="ddi2-679d5e20-c232-013c-6f29-0242ac170004-ipumsi_00017.dat-international.ipums.org" version="2.5" xmlns="ddi:codebook:2_5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="ddi:codebook:2_5 http://www.ddialliance.org/Specification/DDI-Codebook/2.5/XMLSchema/codebook.xsd">
   <docDscr>
     <citation>
       <titlStmt>
         <titl>Codebook for an IPUMS International Data Extract</titl>
-        <subTitl>DDI 2.5 metadata describing the extract file  'ipumsi_00012.dat'</subTitl>
-        <IDNo>ddi2-679d5e20-c232-013c-6f29-0242ac170004-ipumsi_00012.dat-international.ipums.org</IDNo>
+        <subTitl>DDI 2.5 metadata describing the extract file  'ipumsi_00017.dat'</subTitl>
+        <IDNo>ddi2-679d5e20-c232-013c-6f29-0242ac170004-ipumsi_00017.dat-international.ipums.org</IDNo>
       </titlStmt>
       <rspStmt>
         <AuthEnty affiliation="University of Minnesota">IPUMS</AuthEnty>
       </rspStmt>
       <prodStmt>
         <producer abbr="IPUMS" affiliation="University of Minnesota" role="Documentation">IPUMS</producer>
-        <prodDate date="2025-03-23">March 23, 2025</prodDate>
+        <prodDate date="2025-03-26">March 26, 2025</prodDate>
         <prodPlac>IPUMS, 50 Willey Hall, 225 - 19th Avenue South, Minneapolis, MN 55455</prodPlac>
       </prodStmt>
       <distStmt>
@@ -24,14 +24,14 @@
   <stdyDscr>
     <citation>
       <titlStmt>
-        <titl>User Extract ipumsi_00012.dat</titl>
+        <titl>User Extract ipumsi_00017.dat</titl>
       </titlStmt>
       <rspStmt>
         <AuthEnty affiliation="University of Minnesota">IPUMS</AuthEnty>
       </rspStmt>
       <prodStmt>
         <producer abbr="IPUMS" affiliation="University of Minnesota" role="Documentation">IPUMS</producer>
-        <prodDate date="2025-03-23">March 23, 2025</prodDate>
+        <prodDate date="2025-03-26">March 26, 2025</prodDate>
         <prodPlac>IPUMS, 50 Willey Hall, 225 - 19th Avenue South, Minneapolis, MN 55455</prodPlac>
       </prodStmt>
       <distStmt>
@@ -42,22 +42,47 @@
         <serInfo>DOI:10.18128/D020.V7.6</serInfo>
       </serStmt>
       <verStmt>
-        <version date="2025-03-23"/>
+        <version date="2025-03-26"/>
       </verStmt>
     </citation>
     <stdyInfo>
       <subject>
         <topcClas vocab="IPUMS">Technical Household Variables -- HOUSEHOLD</topcClas>
         <topcClas vocab="IPUMS">Technical Person Variables -- PERSON</topcClas>
-        <topcClas vocab="IPUMS">Constructed Family Interrelationship Variables -- PERSON</topcClas>
-        <topcClas vocab="IPUMS">Ethnicity and Language Variables -- PERSON</topcClas>
+        <topcClas vocab="IPUMS">Fertility and Mortality Variables -- PERSON</topcClas>
+        <topcClas vocab="IPUMS">Education Variables -- PERSON</topcClas>
+        <topcClas vocab="IPUMS">Work Variables -- PERSON</topcClas>
         <topcClas vocab="IPUMS">Income Variables -- PERSON</topcClas>
       </subject>
-      <sumDscr ID="sdatref-2519">
-        <timePrd date="2001" event="single">2001</timePrd>
-        <nation abbr="za">South Africa</nation>
+      <sumDscr ID="sdatref-2474">
+        <timePrd date="1990" event="single">1990</timePrd>
+        <nation abbr="mx">Mexico</nation>
       </sumDscr>
-      <notes><![CDATA[Additional notes on a sample that is part of this study:  South Africa 2001
+      <sumDscr ID="sdatref-2476">
+        <timePrd date="2000" event="single">2000</timePrd>
+        <nation abbr="mx">Mexico</nation>
+      </sumDscr>
+      <sumDscr ID="sdatref-2632">
+        <timePrd date="2010" event="single">2010</timePrd>
+        <nation abbr="mx">Mexico</nation>
+      </sumDscr>
+      <sumDscr ID="sdatref-2992">
+        <timePrd date="2020" event="single">2020</timePrd>
+        <nation abbr="mx">Mexico</nation>
+      </sumDscr>
+      <notes><![CDATA[Additional notes on a sample that is part of this study:  Mexico 1990
+            Density of the full data file:  10.0%
+            Density of this extract: 10.0%
+]]></notes>
+      <notes><![CDATA[Additional notes on a sample that is part of this study:  Mexico 2000
+            Density of the full data file:  10.6%
+            Density of this extract: 10.6%
+]]></notes>
+      <notes><![CDATA[Additional notes on a sample that is part of this study:  Mexico 2010
+            Density of the full data file:  10.0%
+            Density of this extract: 10.0%
+]]></notes>
+      <notes><![CDATA[Additional notes on a sample that is part of this study:  Mexico 2020
             Density of the full data file:  10.0%
             Density of this extract: 10.0%
 ]]></notes>
@@ -133,7 +158,7 @@ These safeguards mirror the principles from the Joint ECE/Eurostat Work Session 
   </stdyDscr>
   <fileDscr ID="ExtractData">
     <fileTxt>
-      <fileName>ipumsi_00012.dat</fileName>
+      <fileName>ipumsi_00017.dat</fileName>
       <fileCont>Microdata records</fileCont>
       <fileStrc type="rectangular"/>
       <fileType charset="ISO-8859-1">ISO-8859-1 data file</fileType>
@@ -3610,573 +3635,727 @@ NOTE: PERWT has 2 implied decimal places.  That is, the last two digits of the e
   <concept vocab="IPUMS">Technical Person Variables -- PERSON</concept>
   <varFormat schema="other" type="numeric"/>
 </var>
-<var ID="FAMSIZE" dcml="0" files="ExtractData" intrvl="discrete" name="FAMSIZE">
-  <location EndPos="52" StartPos="49" width="4"/>
-  <labl>Number of own family members in household</labl>
-  <txt><![CDATA[FAMSIZE counts the number of the person's own family members living in the household with her/him, including the person her/himself.  These include all persons related to the person by blood, adoption, or marriage as indicated by the census forms or inferred from them.
-
-FAMSIZE is calculated from the units identified in the IPUMS constructed variable FAMUNIT (family unit membership).  The primary family is defined as all persons related to the head in the RELATE variable. Secondary families are individuals or groups of persons linked together by the IPUMS constructed pointer variables SPLOC, MOMLOC, and POPLOC (location of spouse, mother, and father).]]></txt>
+<var ID="CHBORN" dcml="0" files="ExtractData" intrvl="discrete" name="CHBORN">
+  <location EndPos="50" StartPos="49" width="2"/>
+  <labl>Children ever born</labl>
+  <txt><![CDATA[CHBORN reports the number of children ever born to each woman of whom the question was asked. In most samples, women were to report all live births by all fathers, whether or not the child was still living.]]></txt>
   <catgry>
-    <catValu>0001</catValu>
-    <labl>1 family member present</labl>
+    <catValu>00</catValu>
+    <labl>No children</labl>
   </catgry>
   <catgry>
-    <catValu>0002</catValu>
-    <labl>2 family members present</labl>
+    <catValu>01</catValu>
+    <labl>1 child</labl>
   </catgry>
   <catgry>
-    <catValu>0003</catValu>
-    <labl>3 family members present</labl>
+    <catValu>02</catValu>
+    <labl>2 children</labl>
   </catgry>
   <catgry>
-    <catValu>0004</catValu>
+    <catValu>03</catValu>
+    <labl>3</labl>
+  </catgry>
+  <catgry>
+    <catValu>04</catValu>
     <labl>4</labl>
   </catgry>
   <catgry>
-    <catValu>0005</catValu>
+    <catValu>05</catValu>
     <labl>5</labl>
   </catgry>
   <catgry>
-    <catValu>0006</catValu>
+    <catValu>06</catValu>
     <labl>6</labl>
   </catgry>
   <catgry>
-    <catValu>0007</catValu>
+    <catValu>07</catValu>
     <labl>7</labl>
   </catgry>
   <catgry>
-    <catValu>0008</catValu>
+    <catValu>08</catValu>
     <labl>8</labl>
   </catgry>
   <catgry>
-    <catValu>0009</catValu>
+    <catValu>09</catValu>
     <labl>9</labl>
   </catgry>
   <catgry>
-    <catValu>0010</catValu>
+    <catValu>10</catValu>
     <labl>10</labl>
   </catgry>
   <catgry>
-    <catValu>0011</catValu>
+    <catValu>11</catValu>
     <labl>11</labl>
   </catgry>
   <catgry>
-    <catValu>0012</catValu>
+    <catValu>12</catValu>
     <labl>12</labl>
   </catgry>
   <catgry>
-    <catValu>0013</catValu>
+    <catValu>13</catValu>
     <labl>13</labl>
   </catgry>
   <catgry>
-    <catValu>0014</catValu>
+    <catValu>14</catValu>
     <labl>14</labl>
   </catgry>
   <catgry>
-    <catValu>0015</catValu>
+    <catValu>15</catValu>
     <labl>15</labl>
   </catgry>
   <catgry>
-    <catValu>0016</catValu>
+    <catValu>16</catValu>
     <labl>16</labl>
   </catgry>
   <catgry>
-    <catValu>0017</catValu>
+    <catValu>17</catValu>
     <labl>17</labl>
   </catgry>
   <catgry>
-    <catValu>0018</catValu>
+    <catValu>18</catValu>
     <labl>18</labl>
   </catgry>
   <catgry>
-    <catValu>0019</catValu>
+    <catValu>19</catValu>
     <labl>19</labl>
   </catgry>
   <catgry>
-    <catValu>0020</catValu>
+    <catValu>20</catValu>
     <labl>20</labl>
   </catgry>
   <catgry>
-    <catValu>0021</catValu>
+    <catValu>21</catValu>
     <labl>21</labl>
   </catgry>
   <catgry>
-    <catValu>0022</catValu>
+    <catValu>22</catValu>
     <labl>22</labl>
   </catgry>
   <catgry>
-    <catValu>0023</catValu>
+    <catValu>23</catValu>
     <labl>23</labl>
   </catgry>
   <catgry>
-    <catValu>0024</catValu>
+    <catValu>24</catValu>
     <labl>24</labl>
   </catgry>
   <catgry>
-    <catValu>0025</catValu>
+    <catValu>25</catValu>
     <labl>25</labl>
   </catgry>
   <catgry>
-    <catValu>0026</catValu>
+    <catValu>26</catValu>
     <labl>26</labl>
   </catgry>
   <catgry>
-    <catValu>0027</catValu>
+    <catValu>27</catValu>
     <labl>27</labl>
   </catgry>
   <catgry>
-    <catValu>0028</catValu>
+    <catValu>28</catValu>
     <labl>28</labl>
   </catgry>
   <catgry>
-    <catValu>0029</catValu>
+    <catValu>29</catValu>
     <labl>29</labl>
   </catgry>
   <catgry>
-    <catValu>0030</catValu>
-    <labl>30</labl>
-  </catgry>
-  <catgry>
-    <catValu>0031</catValu>
-    <labl>31</labl>
-  </catgry>
-  <catgry>
-    <catValu>0032</catValu>
-    <labl>32</labl>
-  </catgry>
-  <catgry>
-    <catValu>0033</catValu>
-    <labl>33</labl>
-  </catgry>
-  <catgry>
-    <catValu>0034</catValu>
-    <labl>34</labl>
-  </catgry>
-  <catgry>
-    <catValu>0035</catValu>
-    <labl>35</labl>
-  </catgry>
-  <catgry>
-    <catValu>0036</catValu>
-    <labl>36</labl>
-  </catgry>
-  <catgry>
-    <catValu>0037</catValu>
-    <labl>37</labl>
-  </catgry>
-  <catgry>
-    <catValu>0038</catValu>
-    <labl>38</labl>
-  </catgry>
-  <catgry>
-    <catValu>0039</catValu>
-    <labl>39</labl>
-  </catgry>
-  <catgry>
-    <catValu>0040</catValu>
-    <labl>40</labl>
-  </catgry>
-  <catgry>
-    <catValu>0041</catValu>
-    <labl>41</labl>
-  </catgry>
-  <catgry>
-    <catValu>0042</catValu>
-    <labl>42</labl>
-  </catgry>
-  <catgry>
-    <catValu>0043</catValu>
-    <labl>43</labl>
-  </catgry>
-  <catgry>
-    <catValu>0044</catValu>
-    <labl>44</labl>
-  </catgry>
-  <catgry>
-    <catValu>0045</catValu>
-    <labl>45</labl>
-  </catgry>
-  <catgry>
-    <catValu>0046</catValu>
-    <labl>46</labl>
-  </catgry>
-  <catgry>
-    <catValu>0047</catValu>
-    <labl>47</labl>
-  </catgry>
-  <catgry>
-    <catValu>0048</catValu>
-    <labl>48</labl>
-  </catgry>
-  <catgry>
-    <catValu>0049</catValu>
-    <labl>49</labl>
-  </catgry>
-  <catgry>
-    <catValu>0050</catValu>
-    <labl>50</labl>
-  </catgry>
-  <catgry>
-    <catValu>0051</catValu>
-    <labl>51</labl>
-  </catgry>
-  <catgry>
-    <catValu>0052</catValu>
-    <labl>52</labl>
-  </catgry>
-  <catgry>
-    <catValu>0053</catValu>
-    <labl>53</labl>
-  </catgry>
-  <catgry>
-    <catValu>0054</catValu>
-    <labl>54</labl>
-  </catgry>
-  <catgry>
-    <catValu>0055</catValu>
-    <labl>55</labl>
-  </catgry>
-  <catgry>
-    <catValu>0056</catValu>
-    <labl>56</labl>
-  </catgry>
-  <catgry>
-    <catValu>0057</catValu>
-    <labl>57</labl>
-  </catgry>
-  <catgry>
-    <catValu>0058</catValu>
-    <labl>58</labl>
-  </catgry>
-  <catgry>
-    <catValu>0059</catValu>
-    <labl>59</labl>
-  </catgry>
-  <catgry>
-    <catValu>0060</catValu>
-    <labl>60</labl>
-  </catgry>
-  <catgry>
-    <catValu>0061</catValu>
-    <labl>61</labl>
-  </catgry>
-  <catgry>
-    <catValu>0062</catValu>
-    <labl>62</labl>
-  </catgry>
-  <catgry>
-    <catValu>0063</catValu>
-    <labl>63</labl>
-  </catgry>
-  <catgry>
-    <catValu>0064</catValu>
-    <labl>64</labl>
-  </catgry>
-  <catgry>
-    <catValu>0065</catValu>
-    <labl>65</labl>
-  </catgry>
-  <catgry>
-    <catValu>0066</catValu>
-    <labl>66</labl>
-  </catgry>
-  <catgry>
-    <catValu>0067</catValu>
-    <labl>67</labl>
-  </catgry>
-  <catgry>
-    <catValu>0068</catValu>
-    <labl>68</labl>
-  </catgry>
-  <catgry>
-    <catValu>0069</catValu>
-    <labl>69</labl>
-  </catgry>
-  <catgry>
-    <catValu>0070</catValu>
-    <labl>70</labl>
-  </catgry>
-  <catgry>
-    <catValu>0071</catValu>
-    <labl>71</labl>
-  </catgry>
-  <catgry>
-    <catValu>0072</catValu>
-    <labl>72</labl>
-  </catgry>
-  <catgry>
-    <catValu>0073</catValu>
-    <labl>73</labl>
-  </catgry>
-  <catgry>
-    <catValu>0074</catValu>
-    <labl>74</labl>
-  </catgry>
-  <catgry>
-    <catValu>0075</catValu>
-    <labl>75</labl>
-  </catgry>
-  <catgry>
-    <catValu>0076</catValu>
-    <labl>76</labl>
-  </catgry>
-  <catgry>
-    <catValu>0077</catValu>
-    <labl>77</labl>
-  </catgry>
-  <catgry>
-    <catValu>0078</catValu>
-    <labl>78</labl>
-  </catgry>
-  <catgry>
-    <catValu>0079</catValu>
-    <labl>79</labl>
-  </catgry>
-  <catgry>
-    <catValu>0080</catValu>
-    <labl>80</labl>
-  </catgry>
-  <catgry>
-    <catValu>0081</catValu>
-    <labl>81</labl>
-  </catgry>
-  <catgry>
-    <catValu>0082</catValu>
-    <labl>82</labl>
-  </catgry>
-  <catgry>
-    <catValu>0083</catValu>
-    <labl>83</labl>
-  </catgry>
-  <catgry>
-    <catValu>0084</catValu>
-    <labl>84</labl>
-  </catgry>
-  <catgry>
-    <catValu>0085</catValu>
-    <labl>85</labl>
-  </catgry>
-  <catgry>
-    <catValu>0086</catValu>
-    <labl>86</labl>
-  </catgry>
-  <catgry>
-    <catValu>0087</catValu>
-    <labl>87</labl>
-  </catgry>
-  <catgry>
-    <catValu>0088</catValu>
-    <labl>88</labl>
-  </catgry>
-  <catgry>
-    <catValu>0089</catValu>
-    <labl>89</labl>
-  </catgry>
-  <catgry>
-    <catValu>0090</catValu>
-    <labl>90</labl>
-  </catgry>
-  <catgry>
-    <catValu>0091</catValu>
-    <labl>91</labl>
-  </catgry>
-  <catgry>
-    <catValu>0092</catValu>
-    <labl>92</labl>
-  </catgry>
-  <catgry>
-    <catValu>0093</catValu>
-    <labl>93</labl>
-  </catgry>
-  <catgry>
-    <catValu>0094</catValu>
-    <labl>94</labl>
-  </catgry>
-  <catgry>
-    <catValu>0095</catValu>
-    <labl>95</labl>
-  </catgry>
-  <catgry>
-    <catValu>0096</catValu>
-    <labl>96</labl>
-  </catgry>
-  <catgry>
-    <catValu>0097</catValu>
-    <labl>97</labl>
-  </catgry>
-  <catgry>
-    <catValu>0098</catValu>
-    <labl>98</labl>
-  </catgry>
-  <catgry>
-    <catValu>0099</catValu>
-    <labl>99 or more persons</labl>
-  </catgry>
-  <concept vocab="IPUMS">Constructed Family Interrelationship Variables -- PERSON</concept>
-  <varFormat schema="other" type="numeric"/>
-</var>
-<var ID="RACE" dcml="0" files="ExtractData" intrvl="discrete" name="RACE">
-  <location EndPos="54" StartPos="53" width="2"/>
-  <labl>Race or color</labl>
-  <txt><![CDATA[Race identifies the racial group with which a person identified himself or herself, or to which an enumerator assigned them. Determinations of race are based largely on appearance or ancestral place of origin.]]></txt>
-  <catgry>
-    <catValu>10</catValu>
-    <labl>White</labl>
-  </catgry>
-  <catgry>
-    <catValu>20</catValu>
-    <labl>Black</labl>
-  </catgry>
-  <catgry>
-    <catValu>21</catValu>
-    <labl>Black African</labl>
-  </catgry>
-  <catgry>
-    <catValu>22</catValu>
-    <labl>Black Caribbean</labl>
-  </catgry>
-  <catgry>
-    <catValu>23</catValu>
-    <labl>Afro-Ecuadorian</labl>
-  </catgry>
-  <catgry>
-    <catValu>24</catValu>
-    <labl>Other Black</labl>
-  </catgry>
-  <catgry>
     <catValu>30</catValu>
-    <labl>Indigenous</labl>
+    <labl>30+</labl>
   </catgry>
   <catgry>
-    <catValu>31</catValu>
-    <labl>American Indian</labl>
-  </catgry>
-  <catgry>
-    <catValu>32</catValu>
-    <labl>Latin American Indian</labl>
-  </catgry>
-  <catgry>
-    <catValu>40</catValu>
-    <labl>Asian</labl>
-  </catgry>
-  <catgry>
-    <catValu>41</catValu>
-    <labl>Chinese</labl>
-  </catgry>
-  <catgry>
-    <catValu>42</catValu>
-    <labl>Japanese</labl>
-  </catgry>
-  <catgry>
-    <catValu>43</catValu>
-    <labl>Korean</labl>
-  </catgry>
-  <catgry>
-    <catValu>44</catValu>
-    <labl>Vietnamese</labl>
-  </catgry>
-  <catgry>
-    <catValu>45</catValu>
-    <labl>Filipino</labl>
-  </catgry>
-  <catgry>
-    <catValu>46</catValu>
-    <labl>Indian</labl>
-  </catgry>
-  <catgry>
-    <catValu>47</catValu>
-    <labl>Pakistani</labl>
-  </catgry>
-  <catgry>
-    <catValu>48</catValu>
-    <labl>Bangladeshi</labl>
-  </catgry>
-  <catgry>
-    <catValu>49</catValu>
-    <labl>Other Asian</labl>
-  </catgry>
-  <catgry>
-    <catValu>50</catValu>
-    <labl>Mixed race</labl>
-  </catgry>
-  <catgry>
-    <catValu>51</catValu>
-    <labl>Brown (Brazil)</labl>
-  </catgry>
-  <catgry>
-    <catValu>52</catValu>
-    <labl>Mestizo (Indigenous and White)</labl>
-  </catgry>
-  <catgry>
-    <catValu>53</catValu>
-    <labl>Mulatto (Black and White)</labl>
-  </catgry>
-  <catgry>
-    <catValu>54</catValu>
-    <labl>Coloured (South Africa)</labl>
-  </catgry>
-  <catgry>
-    <catValu>56</catValu>
-    <labl>Afro-Indigenous</labl>
-  </catgry>
-  <catgry>
-    <catValu>55</catValu>
-    <labl>Two or more races</labl>
-  </catgry>
-  <catgry>
-    <catValu>60</catValu>
-    <labl>Other</labl>
-  </catgry>
-  <catgry>
-    <catValu>61</catValu>
-    <labl>Montubio (Ecuador)</labl>
+    <catValu>98</catValu>
+    <labl>Unknown</labl>
   </catgry>
   <catgry>
     <catValu>99</catValu>
-    <labl>Unknown</labl>
+    <labl>NIU (not in universe)</labl>
   </catgry>
-  <concept vocab="IPUMS">Ethnicity and Language Variables -- PERSON</concept>
+  <concept vocab="IPUMS">Fertility and Mortality Variables -- PERSON</concept>
   <varFormat schema="other" type="numeric"/>
 </var>
-<var ID="INCTOT" dcml="0" files="ExtractData" intrvl="contin" name="INCTOT">
-  <location EndPos="61" StartPos="55" width="7"/>
-  <labl>Total income</labl>
-  <txt><![CDATA[INCTOT reports the person's total personal income from all sources in the previous month or year.]]></txt>
-  <codInstr><![CDATA[INCTOT is a 7-digit numeric variable.
+<var ID="CHSURV" dcml="0" files="ExtractData" intrvl="discrete" name="CHSURV">
+  <location EndPos="52" StartPos="51" width="2"/>
+  <labl>Children surviving</labl>
+  <txt><![CDATA[CHSURV reports the number of children born to a woman who were still living at the time of the census.]]></txt>
+  <catgry>
+    <catValu>00</catValu>
+    <labl>No children</labl>
+  </catgry>
+  <catgry>
+    <catValu>01</catValu>
+    <labl>1 child</labl>
+  </catgry>
+  <catgry>
+    <catValu>02</catValu>
+    <labl>2 children</labl>
+  </catgry>
+  <catgry>
+    <catValu>03</catValu>
+    <labl>3</labl>
+  </catgry>
+  <catgry>
+    <catValu>04</catValu>
+    <labl>4</labl>
+  </catgry>
+  <catgry>
+    <catValu>05</catValu>
+    <labl>5</labl>
+  </catgry>
+  <catgry>
+    <catValu>06</catValu>
+    <labl>6</labl>
+  </catgry>
+  <catgry>
+    <catValu>07</catValu>
+    <labl>7</labl>
+  </catgry>
+  <catgry>
+    <catValu>08</catValu>
+    <labl>8</labl>
+  </catgry>
+  <catgry>
+    <catValu>09</catValu>
+    <labl>9</labl>
+  </catgry>
+  <catgry>
+    <catValu>10</catValu>
+    <labl>10</labl>
+  </catgry>
+  <catgry>
+    <catValu>11</catValu>
+    <labl>11</labl>
+  </catgry>
+  <catgry>
+    <catValu>12</catValu>
+    <labl>12</labl>
+  </catgry>
+  <catgry>
+    <catValu>13</catValu>
+    <labl>13</labl>
+  </catgry>
+  <catgry>
+    <catValu>14</catValu>
+    <labl>14</labl>
+  </catgry>
+  <catgry>
+    <catValu>15</catValu>
+    <labl>15</labl>
+  </catgry>
+  <catgry>
+    <catValu>16</catValu>
+    <labl>16</labl>
+  </catgry>
+  <catgry>
+    <catValu>17</catValu>
+    <labl>17</labl>
+  </catgry>
+  <catgry>
+    <catValu>18</catValu>
+    <labl>18</labl>
+  </catgry>
+  <catgry>
+    <catValu>19</catValu>
+    <labl>19</labl>
+  </catgry>
+  <catgry>
+    <catValu>20</catValu>
+    <labl>20</labl>
+  </catgry>
+  <catgry>
+    <catValu>21</catValu>
+    <labl>21</labl>
+  </catgry>
+  <catgry>
+    <catValu>22</catValu>
+    <labl>22</labl>
+  </catgry>
+  <catgry>
+    <catValu>23</catValu>
+    <labl>23</labl>
+  </catgry>
+  <catgry>
+    <catValu>24</catValu>
+    <labl>24</labl>
+  </catgry>
+  <catgry>
+    <catValu>25</catValu>
+    <labl>25</labl>
+  </catgry>
+  <catgry>
+    <catValu>26</catValu>
+    <labl>26</labl>
+  </catgry>
+  <catgry>
+    <catValu>27</catValu>
+    <labl>27</labl>
+  </catgry>
+  <catgry>
+    <catValu>28</catValu>
+    <labl>28</labl>
+  </catgry>
+  <catgry>
+    <catValu>29</catValu>
+    <labl>29</labl>
+  </catgry>
+  <catgry>
+    <catValu>30</catValu>
+    <labl>30+</labl>
+  </catgry>
+  <catgry>
+    <catValu>98</catValu>
+    <labl>Unknown</labl>
+  </catgry>
+  <catgry>
+    <catValu>99</catValu>
+    <labl>NIU (not in universe)</labl>
+  </catgry>
+  <concept vocab="IPUMS">Fertility and Mortality Variables -- PERSON</concept>
+  <varFormat schema="other" type="numeric"/>
+</var>
+<var ID="LIT" dcml="0" files="ExtractData" intrvl="discrete" name="LIT">
+  <location EndPos="53" StartPos="53" width="1"/>
+  <labl>Literacy</labl>
+  <txt><![CDATA[LIT indicates whether or not the respondent could read and write in any language. A person is typically considered literate if he or she can both read and write. All other persons are illiterate, including those who can either read or write but cannot do both.]]></txt>
+  <catgry>
+    <catValu>0</catValu>
+    <labl>NIU (not in universe)</labl>
+  </catgry>
+  <catgry>
+    <catValu>1</catValu>
+    <labl>No, illiterate</labl>
+  </catgry>
+  <catgry>
+    <catValu>2</catValu>
+    <labl>Yes, literate</labl>
+  </catgry>
+  <catgry>
+    <catValu>9</catValu>
+    <labl>Unknown/missing</labl>
+  </catgry>
+  <concept vocab="IPUMS">Education Variables -- PERSON</concept>
+  <varFormat schema="other" type="numeric"/>
+</var>
+<var ID="YRSCHOOL" dcml="0" files="ExtractData" intrvl="discrete" name="YRSCHOOL">
+  <location EndPos="55" StartPos="54" width="2"/>
+  <labl>Years of schooling</labl>
+  <txt><![CDATA[YRSCHOOL indicates the highest grade/level of schooling the person had completed, in years. Only formal schooling is counted. YRSCHOOL accounts for the number of years of study, regardless of the track or kind of study. Information on degree and/or technical track is available in EDATTAIN. Years of schooling for Israel, categorized into intervals, are given in YRSCHOOL2.
+
+Users should pay close attention to the top-codes in each sample, as discussed in the comparability section.]]></txt>
+  <catgry>
+    <catValu>00</catValu>
+    <labl>None or pre-school</labl>
+  </catgry>
+  <catgry>
+    <catValu>01</catValu>
+    <labl>1 year</labl>
+  </catgry>
+  <catgry>
+    <catValu>02</catValu>
+    <labl>2 years</labl>
+  </catgry>
+  <catgry>
+    <catValu>03</catValu>
+    <labl>3 years</labl>
+  </catgry>
+  <catgry>
+    <catValu>04</catValu>
+    <labl>4 years</labl>
+  </catgry>
+  <catgry>
+    <catValu>05</catValu>
+    <labl>5 years</labl>
+  </catgry>
+  <catgry>
+    <catValu>06</catValu>
+    <labl>6 years</labl>
+  </catgry>
+  <catgry>
+    <catValu>07</catValu>
+    <labl>7 years</labl>
+  </catgry>
+  <catgry>
+    <catValu>08</catValu>
+    <labl>8 years</labl>
+  </catgry>
+  <catgry>
+    <catValu>09</catValu>
+    <labl>9 years</labl>
+  </catgry>
+  <catgry>
+    <catValu>10</catValu>
+    <labl>10 years</labl>
+  </catgry>
+  <catgry>
+    <catValu>11</catValu>
+    <labl>11 years</labl>
+  </catgry>
+  <catgry>
+    <catValu>12</catValu>
+    <labl>12 years</labl>
+  </catgry>
+  <catgry>
+    <catValu>13</catValu>
+    <labl>13 years</labl>
+  </catgry>
+  <catgry>
+    <catValu>14</catValu>
+    <labl>14 years</labl>
+  </catgry>
+  <catgry>
+    <catValu>15</catValu>
+    <labl>15 years</labl>
+  </catgry>
+  <catgry>
+    <catValu>16</catValu>
+    <labl>16 years</labl>
+  </catgry>
+  <catgry>
+    <catValu>17</catValu>
+    <labl>17 years</labl>
+  </catgry>
+  <catgry>
+    <catValu>18</catValu>
+    <labl>18 years or more</labl>
+  </catgry>
+  <catgry>
+    <catValu>90</catValu>
+    <labl>Not specified</labl>
+  </catgry>
+  <catgry>
+    <catValu>91</catValu>
+    <labl>Some primary</labl>
+  </catgry>
+  <catgry>
+    <catValu>92</catValu>
+    <labl>Some technical after primary</labl>
+  </catgry>
+  <catgry>
+    <catValu>93</catValu>
+    <labl>Some secondary</labl>
+  </catgry>
+  <catgry>
+    <catValu>94</catValu>
+    <labl>Some tertiary</labl>
+  </catgry>
+  <catgry>
+    <catValu>95</catValu>
+    <labl>Adult literacy</labl>
+  </catgry>
+  <catgry>
+    <catValu>96</catValu>
+    <labl>Special education</labl>
+  </catgry>
+  <catgry>
+    <catValu>98</catValu>
+    <labl>Unknown/missing</labl>
+  </catgry>
+  <catgry>
+    <catValu>99</catValu>
+    <labl>NIU (not in universe)</labl>
+  </catgry>
+  <concept vocab="IPUMS">Education Variables -- PERSON</concept>
+  <varFormat schema="other" type="numeric"/>
+</var>
+<var ID="EMPSTAT" dcml="0" files="ExtractData" intrvl="discrete" name="EMPSTAT">
+  <location EndPos="56" StartPos="56" width="1"/>
+  <labl>Activity status (employment status) [general version]</labl>
+  <txt><![CDATA[EMPSTAT indicates whether or not the respondent was part of the labor force -- working or seeking work -- over a specified period of time. Depending on the sample, EMPSTAT can also convey further information.
+
+The first digit of EMPSTAT is fully comparable, and classifies the population into three groups: employed, unemployed, and inactive. The combination of employed and unemployed yields the total labor force. The second and third digits of EMPSTAT preserve additional information available for some countries and census years but not for others.
+
+Employment status is sometimes referred to in other sources as "activity status".]]></txt>
+  <catgry>
+    <catValu>0</catValu>
+    <labl>NIU (not in universe)</labl>
+  </catgry>
+  <catgry>
+    <catValu>1</catValu>
+    <labl>Employed</labl>
+  </catgry>
+  <catgry>
+    <catValu>2</catValu>
+    <labl>Unemployed</labl>
+  </catgry>
+  <catgry>
+    <catValu>3</catValu>
+    <labl>Inactive</labl>
+  </catgry>
+  <catgry>
+    <catValu>9</catValu>
+    <labl>Unknown/missing</labl>
+  </catgry>
+  <concept vocab="IPUMS">Work Variables -- PERSON</concept>
+  <varFormat schema="other" type="numeric"/>
+</var>
+<var ID="EMPSTATD" dcml="0" files="ExtractData" intrvl="discrete" name="EMPSTATD">
+  <location EndPos="59" StartPos="57" width="3"/>
+  <labl>Activity status (employment status) [detailed version]</labl>
+  <txt><![CDATA[EMPSTAT indicates whether or not the respondent was part of the labor force -- working or seeking work -- over a specified period of time. Depending on the sample, EMPSTAT can also convey further information.
+
+The first digit of EMPSTAT is fully comparable, and classifies the population into three groups: employed, unemployed, and inactive. The combination of employed and unemployed yields the total labor force. The second and third digits of EMPSTAT preserve additional information available for some countries and census years but not for others.
+
+Employment status is sometimes referred to in other sources as "activity status".]]></txt>
+  <catgry>
+    <catValu>000</catValu>
+    <labl>NIU (not in universe)</labl>
+  </catgry>
+  <catgry>
+    <catValu>100</catValu>
+    <labl>Employed, not specified</labl>
+  </catgry>
+  <catgry>
+    <catValu>110</catValu>
+    <labl>At work</labl>
+  </catgry>
+  <catgry>
+    <catValu>111</catValu>
+    <labl>At work, and 'student'</labl>
+  </catgry>
+  <catgry>
+    <catValu>112</catValu>
+    <labl>At work, and 'housework'</labl>
+  </catgry>
+  <catgry>
+    <catValu>113</catValu>
+    <labl>At work, and 'seeking work'</labl>
+  </catgry>
+  <catgry>
+    <catValu>114</catValu>
+    <labl>At work, and 'retired'</labl>
+  </catgry>
+  <catgry>
+    <catValu>115</catValu>
+    <labl>At work, and 'no work'</labl>
+  </catgry>
+  <catgry>
+    <catValu>116</catValu>
+    <labl>At work, and other situation</labl>
+  </catgry>
+  <catgry>
+    <catValu>117</catValu>
+    <labl>At work, family holding, not specified</labl>
+  </catgry>
+  <catgry>
+    <catValu>118</catValu>
+    <labl>At work, family holding, not agricultural</labl>
+  </catgry>
+  <catgry>
+    <catValu>119</catValu>
+    <labl>At work, family holding, agricultural</labl>
+  </catgry>
+  <catgry>
+    <catValu>120</catValu>
+    <labl>Have job, not at work in reference period</labl>
+  </catgry>
+  <catgry>
+    <catValu>130</catValu>
+    <labl>Armed forces</labl>
+  </catgry>
+  <catgry>
+    <catValu>131</catValu>
+    <labl>Armed forces, at work</labl>
+  </catgry>
+  <catgry>
+    <catValu>132</catValu>
+    <labl>Armed forces, not at work in reference period</labl>
+  </catgry>
+  <catgry>
+    <catValu>133</catValu>
+    <labl>Military trainee</labl>
+  </catgry>
+  <catgry>
+    <catValu>140</catValu>
+    <labl>Marginally employed</labl>
+  </catgry>
+  <catgry>
+    <catValu>200</catValu>
+    <labl>Unemployed, not specified</labl>
+  </catgry>
+  <catgry>
+    <catValu>201</catValu>
+    <labl>Unemployed 6 or more months</labl>
+  </catgry>
+  <catgry>
+    <catValu>202</catValu>
+    <labl>Worked fewer than 6 months, permanent job</labl>
+  </catgry>
+  <catgry>
+    <catValu>203</catValu>
+    <labl>Worked fewer than 6 months, temporary job</labl>
+  </catgry>
+  <catgry>
+    <catValu>210</catValu>
+    <labl>Unemployed, experienced worker</labl>
+  </catgry>
+  <catgry>
+    <catValu>220</catValu>
+    <labl>Unemployed, new worker</labl>
+  </catgry>
+  <catgry>
+    <catValu>230</catValu>
+    <labl>No work available</labl>
+  </catgry>
+  <catgry>
+    <catValu>240</catValu>
+    <labl>Inactive unemployed</labl>
+  </catgry>
+  <catgry>
+    <catValu>300</catValu>
+    <labl>Inactive (not in labor force)</labl>
+  </catgry>
+  <catgry>
+    <catValu>301</catValu>
+    <labl>Unavailable jobseekers</labl>
+  </catgry>
+  <catgry>
+    <catValu>302</catValu>
+    <labl>Available potential jobseekers</labl>
+  </catgry>
+  <catgry>
+    <catValu>310</catValu>
+    <labl>Housework</labl>
+  </catgry>
+  <catgry>
+    <catValu>320</catValu>
+    <labl>Health reasons, unable to work, or disabled</labl>
+  </catgry>
+  <catgry>
+    <catValu>321</catValu>
+    <labl>Permanent disability</labl>
+  </catgry>
+  <catgry>
+    <catValu>322</catValu>
+    <labl>Temporary illness</labl>
+  </catgry>
+  <catgry>
+    <catValu>323</catValu>
+    <labl>Disabled or imprisoned</labl>
+  </catgry>
+  <catgry>
+    <catValu>330</catValu>
+    <labl>In school</labl>
+  </catgry>
+  <catgry>
+    <catValu>340</catValu>
+    <labl>Retirees and living on rent</labl>
+  </catgry>
+  <catgry>
+    <catValu>341</catValu>
+    <labl>Living on rents</labl>
+  </catgry>
+  <catgry>
+    <catValu>342</catValu>
+    <labl>Living on rents or pension</labl>
+  </catgry>
+  <catgry>
+    <catValu>343</catValu>
+    <labl>Retirees/pensioners</labl>
+  </catgry>
+  <catgry>
+    <catValu>344</catValu>
+    <labl>Retired</labl>
+  </catgry>
+  <catgry>
+    <catValu>345</catValu>
+    <labl>Pensioner</labl>
+  </catgry>
+  <catgry>
+    <catValu>346</catValu>
+    <labl>Non-retirement pension</labl>
+  </catgry>
+  <catgry>
+    <catValu>347</catValu>
+    <labl>Disability pension</labl>
+  </catgry>
+  <catgry>
+    <catValu>348</catValu>
+    <labl>Retired without benefits</labl>
+  </catgry>
+  <catgry>
+    <catValu>350</catValu>
+    <labl>Elderly</labl>
+  </catgry>
+  <catgry>
+    <catValu>351</catValu>
+    <labl>Elderly or disabled</labl>
+  </catgry>
+  <catgry>
+    <catValu>360</catValu>
+    <labl>Institutionalized</labl>
+  </catgry>
+  <catgry>
+    <catValu>361</catValu>
+    <labl>Prisoner</labl>
+  </catgry>
+  <catgry>
+    <catValu>370</catValu>
+    <labl>Intermittent worker</labl>
+  </catgry>
+  <catgry>
+    <catValu>371</catValu>
+    <labl>Not working, seasonal worker</labl>
+  </catgry>
+  <catgry>
+    <catValu>372</catValu>
+    <labl>Not working, occasional worker</labl>
+  </catgry>
+  <catgry>
+    <catValu>380</catValu>
+    <labl>Other income recipient</labl>
+  </catgry>
+  <catgry>
+    <catValu>390</catValu>
+    <labl>Inactive, other reasons</labl>
+  </catgry>
+  <catgry>
+    <catValu>391</catValu>
+    <labl>Too young to work</labl>
+  </catgry>
+  <catgry>
+    <catValu>392</catValu>
+    <labl>Dependent</labl>
+  </catgry>
+  <catgry>
+    <catValu>999</catValu>
+    <labl>Unknown/missing</labl>
+  </catgry>
+  <concept vocab="IPUMS">Work Variables -- PERSON</concept>
+  <varFormat schema="other" type="numeric"/>
+</var>
+<var ID="INCEARN" dcml="0" files="ExtractData" intrvl="contin" name="INCEARN">
+  <location EndPos="67" StartPos="60" width="8"/>
+  <labl>Earned income</labl>
+  <txt><![CDATA[INCEARN reports the person's total income from their labor (from wages, a business, or a farm) in the previous month or year.]]></txt>
+  <codInstr><![CDATA[INCEARN is an 8-digit numeric variable.
 
 		
-Codes9999998 = Unknown/missing.
-9999999 = NIU (not in universe).
+Codes99999998 = Unknown/missing.
+99999999 = NIU (not in universe).
 
 		
-Top codes:Brazil 1991: 9,999,997+
-Canada 1971: 50,000+ females in Atlantic region; 75,000+ for others
-Canada 1981: 75,000+ all females, males in Atlantic region; 100,000+ males other regions
-Canada 1991-2001: 200,000+
-Dominican Republic 1981: 3,000+
-Dominican Republic 2002: 500,000+
-Indonesia 1976: 600,000+
-Mexico 1970: 5,500,000+
-Panama 2010: 10,000+
-Puerto Rico 1980: 50,000+
-South Africa 1996: 360,001+
-South Africa 2001-2011: 2,457,601+
-Trinidad and Tobago 1970: 1,200+
-Trinidad and Tobago 2000: 13,000+
-U.S.A. 1960: 25,000+
-U.S.A. 1970: 50,000+
-U.S.A. 1980: 75,000+
-U.S.A. 1990: State median of values over 400,000
-U.S.A. 2000: 999,998+
+Top codes:Canada 1971: 50,000+
+Canada 1981: 75,000+
+Canada 2001: 200,000+
+Israel 1972: 16,000+
+Israel 2008: 275,653+
+Mexico 1990: 90,000,000+
+Mexico 2000: 999,998+
+Mexico 2010-2020: 1,000,000+
+Panama 2000: 9,997+
+Puerto Rico 1990: 999,999+
+Puerto Rico 2000: 310,000+
+U.S.A. 1990: State median of values over 284,000
+U.S.A. 2000: 310,000+
+U.S.A. 2005: 9,999,999+
+Venezuela 1971: 2000+
 
 		
 Bottom codes:Canada 1981-2001: -50,000
-Puerto Rico 2005-2020: -19,998
-U.S.A. 1960: -9,900
-U.S.A. 1970: -9,900
-U.S.A. 1980: -9,995 
-U.S.A. 1990, 2005-2020: -19,998
-U.S.A. 2000: -20,000]]></codInstr>
+Puerto Rico 1990-2020: -9,999
+U.S.A. 1990: -19,996
+U.S.A. 2000-2005, 2015-2020: -9,999
+U.S.A. 2010: -9,900]]></codInstr>
   <concept vocab="IPUMS">Income Variables -- PERSON</concept>
   <varFormat schema="other" type="numeric"/>
 </var>
