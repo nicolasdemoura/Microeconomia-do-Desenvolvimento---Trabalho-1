@@ -110,7 +110,6 @@ descriptive_stat <- ds %>%
                 PERNUM = weighted.mean(PERNUM, HHWT, na.rm = TRUE),
                 HHNUM = n())
                 
-
 # Create a dataframe with household income per capita, household welfare income per capita, number of households, average size of households 
 table_stat <- as.data.frame(matrix(nrow = 6, ncol = length(YEARS)+1))
 colnames(table_stat) <- c("Variável", YEARS)
@@ -159,15 +158,15 @@ table_measures[2,] <- c("Gini", as.numeric(measures_inequality$gini))
 table_measures[3,] <- c("Razão 75-25", as.numeric(measures_inequality$ratio))
 
 table_measures[4,] <- c("Pobreza", rep("", length(YEARS)))
-table_measures[5,] <- c("Headcount Ratio", rep("", length(YEARS)))
+table_measures[5,] <- c("Taxa de Pobreza", rep("", length(YEARS)))
 table_measures[6,] <- c(poverty_lines[1], as.numeric(measures_poverty$headcount_ratio_1))
 table_measures[7,] <- c(poverty_lines[2], as.numeric(measures_poverty$headcount_ratio_2))
 table_measures[8,] <- c(poverty_lines[3], as.numeric(measures_poverty$headcount_ratio_3))
-table_measures[9,] <- c("Poverty Gap", rep("", length(YEARS)))
+table_measures[9,] <- c("Hiato de Pobreza", rep("", length(YEARS)))
 table_measures[10,] <- c(poverty_lines[1], as.numeric(measures_poverty$poverty_gap_1))
 table_measures[11,] <- c(poverty_lines[2], as.numeric(measures_poverty$poverty_gap_2))
 table_measures[12,] <- c(poverty_lines[3], as.numeric(measures_poverty$poverty_gap_3))
-table_measures[13,] <- c("Poverty Severity", rep("", length(YEARS)))
+table_measures[13,] <- c("Severidade da Pobreza", rep("", length(YEARS)))
 table_measures[14,] <- c(poverty_lines[1], as.numeric(measures_poverty$poverty_severity_1))
 table_measures[15,] <- c(poverty_lines[2], as.numeric(measures_poverty$poverty_severity_2))
 table_measures[16,] <- c(poverty_lines[3], as.numeric(measures_poverty$poverty_severity_3))
