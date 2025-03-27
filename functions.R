@@ -16,10 +16,9 @@ weighted.sd <- function(x, w, na.rm = TRUE) {
 # Function that calculates the Gini coefficient
 gini <- function(x, w) {
     lorenz <- cumsum(x * w) / sum(x * w)
-
+    w <- w/sum(w)
     # Calculate the Gini coefficient
-    gini <- round(1 - 2*sum(lorenz) / length(lorenz),3)
-    
+    gini <- round(1 - 2*sum(lorenz*w),3)
     return(gini)
 }
 
