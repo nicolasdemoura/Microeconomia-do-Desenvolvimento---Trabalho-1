@@ -30,10 +30,7 @@ source("functions.R")
 ###############################################################################
 
 # Import the data
-data_list <- read_ipums_ddi("data/ipumsi_00017.xml")
-raw_data <- read_ipums_micro(data_list)
-
-raw_data <- raw_data %>% filter(YEAR == 1990 | YEAR == 2020)
+raw_data <- readRDS(file = "data/raw_data.rds")
 
 YEARS <- unique(raw_data$YEAR)
 YEARS <- sort(YEARS)
